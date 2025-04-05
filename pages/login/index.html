@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EventMaster - Login</title>
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.4/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-DQvkBjpPgn7RC31MCQoOeC9TI2kdqa4+BSgNMNj8v77fdC77Kj5zpWFTJaaAoMbC" crossorigin="anonymous">
+</head>
+<body class="login-page">
+    <div class="container">
+        
+        <main>
+            <div class="auth-container">
+                <div class="login-card">
+                    <div class="right-panel">
+                        <h1 class="brand-title">
+                            <span>Event<span class="brand-accent">Master</span></span>
+                        </h1>
+                        <h1 class="welcome-text">Welcome Back!</h1>
+                        <p>Login to manage and plan your events like a pro</p>
+                        <a href="../register/index.html">
+                            <button class="button-link" id="goToRegister">
+                                Need an account? Register
+                            </button>
+                        </a>
+                    </div>
+                    <div class="left-panel">
+                        <div id="loginError" class="error-message"></div>
+                        <form id="loginForm" class="auth-form">
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="password">Password</label>
+                                <input type="password" id="password" name="password" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <button type="submit" class="btn-primary" id="loginButton">
+                                    <span>Login</span>
+                                    <span class="spinner" style="display: none;"></span>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </main>
+        
+    </div>
+    <script src="./assets/js/scripts.js"></script> 
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.4/dist/js/bootstrap.bundle.min.js" integrity="sha384-YUe2LzesAfftltw+PEaao2tjU/QATaW/rOitAq67e0CT0Zi2VVRL0oC4+gAaeBKu" crossorigin="anonymous"></script>
+</body>
+</html>

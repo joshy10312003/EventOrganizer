@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guest Tracking</title>
+    <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+<body>
+    <div class="app-container">
+
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <a href="../index.html">
+                    <h2>EventMaster</h2>
+                </a>
+            </div>
+            
+            <nav class="sidebar-nav">
+                <ul>
+                    <li><a href="../dashboard/index.html">Dashboard</a></li>
+                    <li><a href="../tasks/index.html">Tasks</a></li>
+                    <li class="active"><a href="./index.html">Guests</a></li>
+                    <li><a href="../venue/index.html">Venues</a></li>
+                    <li><a href="../providers/index.html">Service Providers</a></li>
+                    <li id="adminOnly"><a href="../users/index.html">User Management</a></li>
+                    <li><a href="../profile/index.html">My Profile</a></li>
+                </ul>
+            </nav>
+            
+            <div class="sidebar-footer">
+                <button id="logoutBtn" class="btn-logout"><span class="icon"></span> Logout</button>
+            </div>
+        </aside>
+
+        <div class="mobile-top-nav">
+            <div class="mobile-nav-header">
+                <div class="mobile-logo-section">
+                    <a href="../../index.html">
+                        <h2 class="mobile-title">EventMaster</h2>
+                    </a>
+                </div>
+                <button class="mobile-menu-toggle" id="mobileMenuToggle">☰</button>
+            </div>
+            <div class="mobile-nav-menu" id="mobileNavMenu">
+                <ul class="mobile-nav-list">
+                    <li class="mobile-nav-item"><a href="../dashboard/index.html" class="mobile-nav-link">Dashboard</a></li>
+                    <li class="mobile-nav-item"><a href="../tasks/index.html" class="mobile-nav-link">Tasks</a></li>
+                    <li class="mobile-nav-item active"><a href="./index.html" class="mobile-nav-link">Guests</a></li>
+                    <li class="mobile-nav-item"><a href="../venue/index.html" class="mobile-nav-link">Venues</a></li>
+                    <li class="mobile-nav-item"><a href="../providers/index.html" class="mobile-nav-link">Service Providers</a></li>
+                    <li class="mobile-nav-item" id="mobileAdminOnly"><a href="../users/index.html" class="mobile-nav-link">User Management</a></li>
+                    <li class="mobile-nav-item"><a href="../profile/index.html" class="mobile-nav-link">My Profile</a></li>
+                </ul>
+                <div class="mobile-logout">
+                    <button id="mobileLogoutBtn" class="mobile-logout-btn">
+                        <span class="mobile-logout-icon"></span>
+                        <span>Logout</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <main class="main-content">
+            <div class="page-header">
+                <h1>Guest Tracking</h1>
+                <button id="addTaskBtn" class="add-new-btn"><span class="icon"></span>New Guest</button>
+            </div>
+
+            
+            <div class="tabs">
+                <button class="tab-btn active" data-tab="taskList">Guest List</button>
+                <button class="tab-btn" data-tab="createTask">New Guest</button>
+            </div>
+            
+            
+            <div id="taskList" class="content-section">
+                <div class="tasks-table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Guest Id</th>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Phone</th>
+                                <th>Status</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="taskTableBody">
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            
+        
+            <div id="createTask" class="content-section" style="display: none;">
+                <div class="form-section">
+                    <h2>Add New Guest</h2>
+                    <form id="taskForm">
+                        <div class="form-row">
+                            <label>Guest ID:</label>
+                            <input type="number" id="guestId" placeholder="Update Guest's Details by Id">
+                        </div>
+                        <div class="form-row">
+                            <label>Event ID:</label>
+                            <input type="number" id="eventId">
+                        </div>
+                        
+                        <div class="form-row">
+                            <label >Name:</label>
+                            <input type="text" id="name" required>
+                        </div>
+                        
+                        <div class="form-row">
+                            <label >Email:</label>
+                            <input type="text" id="email" required>
+                        </div>
+
+                        <div class="form-row">
+                            <label >Phone:</label>
+                            <input type="number" id="phone" required>
+                        </div>
+            
+                        <div class="form-row">
+                            <label for="status">Status:</label>
+                            <select id="status">
+                                <option value="pending">Pending</option>
+                                <option value="in_progress">Confirmed</option>
+                                <option value="completed">Declined</option>
+                            </select>
+                        </div>
+            
+                        <div class="form-buttons">
+                            <button type="submit" class="btn btn-primary">Save Guest</button>
+                            <button type="button" class="btn btn-secondary" id="cancelBtn">Cancel</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="./assets/js/scripts.js"></script> 
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</body>
+</html>

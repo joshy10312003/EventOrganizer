@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Management</title>
+    <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+<body>
+    <div class="app-container">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <a href="../../index.html">
+                    <h2>EventMaster</h2>
+                </a>
+            </div>
+            
+            <nav class="sidebar-nav">
+                <ul>
+                    <li><a href="../dashboard/index.html">Dashboard</a></li>
+                    <li><a href="../tasks/index.html">Tasks</a></li>
+                    <li><a href="../guests/index.html">Guests</a></li>
+                    <li><a href="../venue/index.html">Venues</a></li>
+                    <li><a href="../providers/index.html">Service Providers</a></li>
+                    <li id="adminOnly"><a href="./index.html">User Management</a></li>
+                    <li><a href="../profile/index.html">My Profile</a></li>
+                </ul>
+            </nav>
+            
+            <div class="sidebar-footer">
+                <button id="logoutBtn" class="btn-logout"><span class="icon"></span> Logout</button>
+            </div>
+        </aside>
+
+        <div class="mobile-top-nav">
+            <div class="mobile-nav-header">
+                <div class="mobile-logo-section">
+                    <a href="../../index.html">
+                        <h2 class="mobile-title">EventMaster</h2>
+                    </a>
+                </div>
+                <button class="mobile-menu-toggle" id="mobileMenuToggle">☰</button>
+            </div>
+            <div class="mobile-nav-menu" id="mobileNavMenu">
+                <ul class="mobile-nav-list">
+                    <li class="mobile-nav-item"><a href="../dashboard/index.html" class="mobile-nav-link">Dashboard</a></li>
+                    <li class="mobile-nav-item"><a href="../tasks/index.html" class="mobile-nav-link">Tasks</a></li>
+                    <li class="mobile-nav-item"><a href="../guests/index.html" class="mobile-nav-link">Guests</a></li>
+                    <li class="mobile-nav-item"><a href="../venue/index.html" class="mobile-nav-link">Venues</a></li>
+                    <li class="mobile-nav-item "><a href="../providers/index.html" class="mobile-nav-link">Service Providers</a></li>
+                    <li class="mobile-nav-item active" id="mobileAdminOnly"><a href="./index.html" class="mobile-nav-link">User Management</a></li>
+                    <li class="mobile-nav-item"><a href="../profile/index.html" class="mobile-nav-link">My Profile</a></li>
+                </ul>
+                <div class="mobile-logout">
+                    <button id="mobileLogoutBtn" class="mobile-logout-btn">
+                        <span class="mobile-logout-icon"></span>
+                        <span>Logout</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <main class="main-content">
+            <div class="page-header">
+                <h1>User Management</h1>
+            </div>
+            
+            <div id="taskList" class="content-section">
+                <div class="tasks-table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>User Id</th>
+                                <th>Full Name</th>
+                                <th>Email</th>
+                                <th>Password</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="eventTableBody">
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="./assets/js/scripts.js"></script> 
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</body>
+</html>
